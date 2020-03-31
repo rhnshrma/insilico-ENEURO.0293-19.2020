@@ -1,18 +1,10 @@
 
 
-
-#gkleak_array1=['0.0130','0.0131','0.0132','0.0133','0.0134','0.0135','0.0136','0.0137','0.0138','0.0139','0.0140','0.0141','0.0142','0.0143','0.0144','0.0145','0.0146','0.0147','0.0148','0.0149','0.0150','0.0151','0.0152','0.0153','0.0154','0.0155','0.0156','0.0157','0.0158','0.0159','0.0160','0.0161','0.0162','0.0163','0.0164','0.0165','0.0166','0.0167','0.0168','0.0169','0.0170']
-#gkleak_array2=['130','131','132','133','134','135','136','137','138','139','140','141','142','143','144','145','146','147','148','149','150','151','152','153','154','155','156','157','158','159','160','161','162','163','164','165','166','167','168','169','170']
-
 gkleak_array1=[]
 gkleak_array2=[]
 rleak1 = []
 rleak2 = []
 
-gs_array1=['1.0']
-#gs_array2=['70','80','90','100','110','120','130','140','150','160','170','180','190','200','210','220','230','240','250','260','270','280','290']
-
-t_array1=['5','10']
 
 gh_array1=[]
 gh_array2=[]
@@ -21,22 +13,19 @@ for g in xrange(30,150,2):
 	gkleak_array1.append(format(g/10000.000000000,'.6f'))
 	gkleak_array2.append(str(g))
 
-	k_RE = 800*(1 - (g - 100)/g)
+	# k_RE = 800*(1 - (g - 100)/g)
 
-	rleak1.append(format(k_RE/10000.000000000,'.6f'))
-	rleak2.append(str(g))
-
+	# rleak1.append(format(k_RE/10000.000000000,'.6f'))
+	# rleak2.append(str(g))
+rleak1 = ['0.08']
 for g in xrange(4,50,4):
 	gh_array1.append(format(g/100.000000000,'.6f'))
 	gh_array2.append(str(g))
-tauarray = ['0.625','1.25','2.5','5','10','20','40']
-Ca = ['0.00024']
-#calciumshift = ['0.50','0.55','0.60','0.65','0.70','0.75','0.80','0.85','0.90','0.95','1.00','1.05','1.10','1.15','1.20','1.25','1.30','1.35','1.40','1.50','1.55','1.60','1.65','1.70','1.75','1.80','1.85','1.90','1.95']
 
-#for c in xrange(50,150,2):
-#	calciumshift.append(format(c/100.000000000,'.2f'))
+Ca = ['0.00024']
+
 calciumshift = ['1.00']
-#for cs in calciumshift:
+
 for c in calciumshift:
 	for rl in xrange(0,len(rleak1)):
 
@@ -46,7 +35,7 @@ for c in calciumshift:
 
 				for j in xrange(0,len(gkleak_array1)):
 
-					NSETS_CONF="/storage/rohan/ISF_Files/calciumshift/nsets_network_mAch_Ca0.00024_gh"+gh_array2[k]+"_leak"+gkleak_array2[j]+"_cashift"+c+".isf"
+					NSETS_CONF="./nsets_network_mAch_Ca0.00024_gh"+gh_array2[k]+"_leak"+gkleak_array2[j]+"_cashift"+c+".isf"
 					strtofile = ""
 
 
@@ -88,7 +77,6 @@ for c in calciumshift:
 						NEURON+="I_THT_HTC:0,"
 						NEURON+="Ca_conc_stoch:-1,"
 						NEURON+="calcium_shift:"+c+","
-						#NEURON+="calcium_shift:1,"
 						NEURON+="m_ahp_HTC_stoch:-1,"
 						NEURON+="r_H_HTC_stoch:-1,"
 						NEURON+="h_tht_HTC_stoch:-1,"
