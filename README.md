@@ -39,11 +39,12 @@ License
 =======
 
 This simulator library is licensed under GNU GPLv3 which can be found in `LICENSE` file under home directory of this project.
-# insilico-ENEURO.0293-19.2020
+
 
 Biophysical basis of alpha rhythm disruption in Alzheimer’s Disease (AD)
 =======
 
-Go to insilico-0.25/examples/ENEURO.0293-19.2020/ for the specific set of files used for simulations in https://doi.org/10.1523/ENEURO.0293-19.2020
+Go to insilico-0.25/examples/ENEURO.0293-19.2020/ for the specific set of files used for simulations in
+# https://doi.org/10.1523/ENEURO.0293-19.2020
 
 
