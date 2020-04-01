@@ -33,16 +33,15 @@ namespace insilico {
 class I_THT_HTC {
  public:
   static void current(state_type &variables, state_type &dxdt, const double t, unsigned index) {
-   /* double gca = engine::neuron_value(index,"g_THT"), eca = 120;*/
+    double gca = engine::neuron_value(index,"g_THT"), eca = 120;
                                                               // Declaring Constants
-    double gca = 12, eca = 120;
     unsigned v_index = engine::neuron_index(index, "v");
     unsigned h_index = engine::neuron_index(index, "h_tht_HTC");
     unsigned Ca_index= engine::neuron_index(index, "Ca_conc");
 
     double v = variables[v_index];
     double h = variables[h_index];
-    double calcium_shift = 1;
+    double calcium_shift = engine::neuron_index(index, "calcium_shift1");
     double Ca = variables[Ca_index];
 
 
